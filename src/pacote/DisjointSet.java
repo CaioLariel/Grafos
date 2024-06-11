@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DisjointSet<TIPO> {
+
     private Map<TIPO, Node<TIPO>> map = new HashMap<>();
 
     private class Node<T> {
@@ -34,9 +35,11 @@ public class DisjointSet<TIPO> {
         if (node == null) {
             return null;
         }
+
         if (node != node.parent) {
             node.parent = findSetNode(node.parent.data);
         }
+
         return node.parent;
     }
 
